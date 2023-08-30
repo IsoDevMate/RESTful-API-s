@@ -1,17 +1,17 @@
-const express =require('express')()
-const app=express()
-const  PORT=8082
+const express =require('express')
+const app =express()
+const  port= process.env.PORT || 8080
 app.listen(
-    PORT,
-    () =>console.log(`It's alive on http://localhost:${PORT}`)
+    port,
+    () =>console.log(`It's alive on http://localhost:${port}`)
 )
 
 app.use(express.json())
 
 app.get('/tshirt',(req,res) =>{
   res.status(200).send({
-    tshirt:'👕',
-    size:'large'
+  "tshirt":"👕",
+    "size":"large"
   })
 })
 
